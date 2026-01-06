@@ -15,3 +15,4 @@ warnings.filterwarnings('ignore')
 
 df = pd.read_csv('bitcoin.csv')
 df.head()
+df.describe()
