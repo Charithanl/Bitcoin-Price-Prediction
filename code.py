@@ -25,3 +25,6 @@ plt.title('Bitcoin Close price.', fontsize=15)
 plt.ylabel('Price in dollars.')
 plt.show()
 
+df[df['Close'] == df['Adj Close']].shape, df.shape
+df = df.drop(['Adj Close'], axis=1)
+df.isnull().sum()
