@@ -24,3 +24,4 @@ plt.plot(df['Close'])
 plt.title('Bitcoin Close price.', fontsize=15)
 plt.ylabel('Price in dollars.')
 plt.show()
+
