@@ -28,3 +28,11 @@ plt.show()
 df[df['Close'] == df['Adj Close']].shape, df.shape
 df = df.drop(['Adj Close'], axis=1)
 df.isnull().sum()
+
+features = ['Open', 'High', 'Low', 'Close']
+
+plt.subplots(figsize=(20,10))
+for i, col in enumerate(features):
+  plt.subplot(2,2,i+1)
+  sn.distplot(df[col])
+plt.show()
