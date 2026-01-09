@@ -18,7 +18,7 @@ df.head()
 df.describe()
 df.info()
 
-#Exploratory data Aanalysis (EDA)
+#EDA exploratory data analysis 
 plt.figure(figsize=(15, 5))
 plt.plot(df['Close'])
 plt.title('Bitcoin Close price.', fontsize=15)
