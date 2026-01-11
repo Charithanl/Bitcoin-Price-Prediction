@@ -36,3 +36,9 @@ for i, col in enumerate(features):
   plt.subplot(2,2,i+1)
   sn.distplot(df[col])
 plt.show()
+
+plt.subplots(figsize=(20,10))
+for i, col in enumerate(features):
+  plt.subplot(2,2,i+1)
+  sn.boxplot(df[col], orient='h')
+plt.show()
