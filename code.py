@@ -44,3 +44,13 @@ for i, col in enumerate(features):
 plt.show()
 
 #Feature Engineering
+# Ensure Date column is datetime
+df['Date'] = pd.to_datetime(df['Date'])
+
+# Extract date features safely
+df['year'] = df['Date'].dt.year
+df['month'] = df['Date'].dt.month
+df['day'] = df['Date'].dt.day
+
+# Preview result
+df.head()
