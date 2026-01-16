@@ -18,3 +18,5 @@ def add_technical_indicators(df):
     # MACD signal line
     # 9-period EMA of the MACD line, used to generate buy/sell signals
     df["macd_signal"] = df["macd"].ewm(span=9).mean()
+
+    # PRICE DIFFERENCE (used for RSI)
