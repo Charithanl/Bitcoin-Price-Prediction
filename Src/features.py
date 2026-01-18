@@ -1,5 +1,9 @@
 def build_features(df):
+    # Feature 1: Difference between Open and Close price
+    # Helps identify bullish or bearish candles
     df["open_close"] = df["Open"] - df["Close"]
+    # Feature 2: Difference between Low and High price
+    # Measures price volatility within a time period
     df["low_high"] = df["Low"] - df["High"]
     df["return"] = df["Close"].pct_change()
 
