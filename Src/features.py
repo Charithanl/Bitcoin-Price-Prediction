@@ -10,12 +10,15 @@ def build_features(df):
     # Feature 3: Percentage return of Close price
     # Shows relative price movement compared to previous period
     df["return"] = df["Close"].pct_change()
+    df["ema_trend"] = df["ema_12"] - df["ema_26"]
+
 
     # Target variable:
     # 1 if next day's Close price is higher than today's Close
     # 0 otherwise
-    # shift(-1) moves future Close price to current row
-    df["target"] = (df["Close"].shift(-1) > df["Close"]).astype(int)
+    # shift(-5) moves future Close price to current row
+    HORIZON = 10
+    df["target"] = (df["Close"].shift(-HORIZON) > df["Close"]).astype(int)
 
     # Remove rows with NaN values created by pct_change() and shift()
     # Machine learning models cannot work with missing values
@@ -30,7 +33,8 @@ def build_features(df):
         "macd",         # Moving Average Convergence Divergence
         "macd_signal",  # MACD signal line
         "ema_12",       # Short-term exponential moving average
-        "ema_26",       # Long-term exponential moving average
+        "ema_26",
+        "ema_trend",    # Long-term exponential moving average
         "bb_upper",     # Upper Bollinger Band (volatility)
         "bb_lower"      # Lower Bollinger Band (volatility)
     ]
