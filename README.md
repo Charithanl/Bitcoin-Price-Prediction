@@ -128,6 +128,14 @@ These results indicate:
 
 ---
 
+### **Lessons Learned (Short)**
+
+* Correct time-series validation exposes the true difficulty of financial prediction tasks.
+* Bitcoin price direction shows weak predictability when using price-only data.
+* Technical indicators do not add new information beyond historical prices.
+* ROC-AUC is more meaningful than accuracy for noisy, imbalanced financial data.
+* Honest evaluation and failure analysis are more valuable than inflated metrics.
+
 ## Limitations
 
 * Uses only OHLC price data
@@ -199,4 +207,5 @@ This project demonstrates that:
 
 This project is for **educational and analytical purposes only**.
 It does **not** constitute financial or investment advice.
+
 
